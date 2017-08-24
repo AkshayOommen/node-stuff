@@ -1,4 +1,4 @@
 var greet = require('./greet');
 
-greet.english();
-greet.spanish();
+console.log(greet.english.props.languageName);
+console.log(greet.spanish.languageName);

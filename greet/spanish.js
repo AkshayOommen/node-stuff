@@ -4,4 +4,9 @@ var greet = function() {
     console.log(greetings.es);
 }
 
-module.exports = greet;
+
+// This will not work
+exports = {
+    languageName: 'Spanish',
+    greet: greet
+}

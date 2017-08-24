@@ -4,4 +4,8 @@ var greet = function() {
     console.log(greetings.en);
 }
 
-module.exports = greet;
+// This will work
+exports.props = {
+    languageName: 'English',
+    greet: greet
+}
