@@ -3,7 +3,11 @@
 // var Person = require('./Person');
 var Util = require('util');
 // var Events = require('events');
+var files = require('./node-file');
 
+files.fetchReadme();
+files.fetchReadmeAsync();
+console.log('BALH');
 
 // var emtr = new Emitter();
 
@@ -44,11 +48,11 @@ var Util = require('util');
 // var fictBook = new FictionalBook();
 // fictBook.displayBookInfo();
 
-var buffer = new Buffer('Thomas');
-console.log(buffer);
-console.log(buffer.toJSON());
-console.log(buffer.toString());
-console.log(buffer[2]);
+// var buffer = new Buffer('Thomas');
+// console.log(buffer);
+// console.log(buffer.toJSON());
+// console.log(buffer.toString());
+// console.log(buffer[2]);
 
-buffer.write('Axe');
-console.log(buffer.toString());
+// buffer.write('Axe');
+// console.log(buffer.toString());
