@@ -1,4 +1,5 @@
 var fs = require('fs');
+var zlib = require('zlib');
 
 function fetchReadme() {
     var file = fs.readFileSync('./node-stuff/README.md', 'utf8');
@@ -15,8 +16,15 @@ var readable = fs.createReadStream(__dirname + '/samples/sampleA.txt', {encoding
 
 var writable = fs.createWriteStream(__dirname + '/samples/sampleB.txt', {encoding: 'utf8'});
 
-readable.on('data', function(chunk) {
-    writable.write(chunk);
-})
+var compressed = fs.createWriteStream(__dirname + '/samples/sampleC.txt.gz', {encoding: 'utf8'});
+
+var gzip = zlib.createGzip();
+
+readable.pipe(writable);
+readable.pipe(gzip).pipe(compressed);
+
+// readable.on('data', function(chunk) {
+//     writable.write(chunk);
+// })
 
 module.exports = { fetchReadme, fetchReadmeAsync };
