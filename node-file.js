@@ -11,4 +11,12 @@ function fetchReadmeAsync() {
     })
 }
 
+var readable = fs.createReadStream(__dirname + '/samples/sampleA.txt', {encoding: 'utf8', highWaterMark: 3 * 1000});
+
+var writable = fs.createWriteStream(__dirname + '/samples/sampleB.txt', {encoding: 'utf8'});
+
+readable.on('data', function(chunk) {
+    writable.write(chunk);
+})
+
 module.exports = { fetchReadme, fetchReadmeAsync };

@@ -5,9 +5,9 @@ var Util = require('util');
 // var Events = require('events');
 var files = require('./node-file');
 
-files.fetchReadme();
-files.fetchReadmeAsync();
-console.log('BALH');
+// files.fetchReadme();
+// files.fetchReadmeAsync();
+// console.log('BALH');
 
 // var emtr = new Emitter();
 
