@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/AkshayOommen/node-stuff#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.15.4"
   }
 }
