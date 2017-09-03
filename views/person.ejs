@@ -1,9 +1,29 @@
 <html>
     <head>
         <link href="/assets/style.css" type="text/css" rel="stylesheet"/>
+        <script
+        src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
     </head>
     <body>
         <h1>Welcome to Express!!!</h1>
         <p><%= emp.name %> - <%= emp.designation %></p>
+
+        <form method="POST" action="/animal-url-encoded">
+            First Name: <input type="text" id="firstName" name="firstName"/>
+            Last Name: <input type="text" id="lastName" name="lastName"/>
+            <input type="submit" value="Submit"/>
+        </form>
+
+        <script>
+            $.ajax({
+                type: 'POST',
+                url: '/animal-json',
+                data: JSON.stringify({firstName: 'Akshay', lastName: 'Oommen'}),
+                dataType: 'json',
+                contentType: 'application/json'
+            })
+        </script>
     </body>
 </html> 
